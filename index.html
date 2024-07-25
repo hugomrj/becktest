@@ -226,15 +226,15 @@
 
             let resultText = '';
 
-            if (totalScore <= 10) {
-                resultText = 'Ansiedad baja.';
-            } else if (totalScore <= 20) {
-                resultText = 'Ansiedad moderada.';
-            } else if (totalScore <= 30) {
-                resultText = 'Ansiedad alta.';
-            } else {
-                resultText = 'Ansiedad muy alta.';
-            }
+			if (totalScore <= 10) {
+				resultText = 'Ansiedad baja.';
+			} else if (totalScore <= 30) {
+				resultText = 'Ansiedad moderada.';
+			} else if (totalScore <= 50) {
+				resultText = 'Ansiedad alta.';
+			} else {
+				resultText = 'Ansiedad muy alta.';
+			}
 
             // Muestra el contenedor de resultado
             const resultDiv = document.getElementById('result');
