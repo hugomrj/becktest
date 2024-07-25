@@ -200,7 +200,7 @@
                 </div>
                 <div class="button-container">
                     <button type="button" class="button is-primary" onclick="calculateScore()">Calcular Resultado</button>
-                    <button type="reset" class="button is-light">Resetear</button>
+                    <button type="reset" class="button is-light" id="resetButton">Resetear</button>
                 </div>
             </form>
 
@@ -211,6 +211,11 @@
     </section>
 
     <script>
+	
+	    document.getElementById('resetButton').addEventListener('click', function() {
+			location.reload();
+		});
+	
         function calculateScore() {
             let totalScore = 0;
             const form = document.getElementById('beckForm');
