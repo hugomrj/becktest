@@ -31,16 +31,73 @@
             display: none; /* Oculto por defecto */
         }
 
+
         .button-container {
-            margin-top: 1.5rem;
+            display: flex;
+            flex-direction: row; /* Asegúrate de que los botones estén en fila por defecto */
+            justify-content: flex-start; /* Espacio entre botones en pantallas grandes */
+            margin-bottom: 1rem; /* Espacio inferior para la sección de botones */
         }
+
+        .button-container .button {
+            width: auto; /* Ancho automático para botones */
+            font-size: 1rem; /* Tamaño normal por defecto para computadoras */
+            padding: 0.5rem 1rem; /* Padding normal para computadoras */
+            margin-right: 0.5rem; /* Espacio a la derecha del botón */
+        }
+
+        /* Ajustes para pantallas pequeñas */
+        @media (max-width: 768px) { 
+            .button-container {
+                flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
+                align-items: stretch; /* Asegurar que los botones ocupen el ancho completo */
+            }
+            .button-container .button {
+                width: 100%; /* Hacer los botones de ancho completo en móviles */
+                font-size: 1.2rem; /* Tamaño más grande para móviles */
+                padding: 1rem 2rem; /* Padding más grande para móviles */
+                margin-bottom: 1rem; /* Espacio mayor entre botones */
+            }
+        }
+  
+
+
+
+
+
+
+
+        html {
+            font-size: 16px; /* Tamaño de fuente por defecto */
+        }
+
+        @media (max-width: 768px) { /* Ajustes para pantallas pequeñas */
+            html {
+                font-size:  1.6rem; /* Aumenta el tamaño de fuente en pantallas pequeñas */
+            }
+        }
+
+
+        .custom-container {
+            padding: 1rem; /* Ajusta el padding como desees */
+        }
+
+        @media (max-width: 768px) { /* Ajustes para pantallas pequeñas */
+            .custom-container {
+                padding: 0.5rem; /* Menos padding en pantallas pequeñas */
+            }
+        }
+
+
+
     </style>
 
 
 </head>
 <body>
     <section class="section">
-        <div class="container">
+        <div class="container custom-container">
+
             <h1 class="title">Test de Ansiedad de Beck</h1>
             <form id="beckForm">
                 <div class="question" id="group-q0">
@@ -190,11 +247,20 @@
                     <label><input type="radio" name="q20" value="2"> Moderado</label>
                     <label><input type="radio" name="q20" value="3"> Bastante</label>
                 </div>
+
+
+
+     
+
                 <div class="button-container">
-                    <button type="button" class="button is-primary" onclick="calculateScore()">Calcular Resultado</button>
-                    <button type="reset" class="button is-light" id="resetButton">Resetear</button>
+                    <button type="button" class="button is-primary " onclick="calculateScore()">Calcular Resultado</button>
+                    <button type="reset" class="button is-light " id="resetButton">Resetear</button>
                 </div>
+                
+
+
             </form>
+
 
 			<br>
 			
